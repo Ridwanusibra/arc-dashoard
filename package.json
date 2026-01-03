@@ -1,0 +1,5 @@
+{
+  "name": "arc-dashboard-monorepo",
+  "private": true,
+  "workspaces": ["backend", "frontend"]
+}
