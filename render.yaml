@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: arc-backend
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    rootDirectory: backend
+    envVars:
+      - key: PORT
+        value: 10000  # Render will override automatically
+  - type: web
+    name: arc-frontend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    rootDirectory: frontend
+    envVars:
+      - key: NEXT_PUBLIC_API_URL
+        value: https://arc-backend.onrender.com  # replace with backend URL
