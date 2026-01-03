@@ -23,5 +23,8 @@ startIndexer();
 app.get('/health', (_, res) => res.json({ ok: true }));
 
 // Use port 4000, bind to all interfaces
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, '0.0.0.0', () => console.log(`Backend running on ${PORT}`));
+const PORT = Number(process.env.PORT) || 4000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
